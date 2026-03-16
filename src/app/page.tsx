@@ -20,11 +20,11 @@ const SERVICES = [
 
 const GALLERY = [
   {
-    src: "https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?auto=format&fit=crop&w=800&q=80",
+    src: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80",
     alt: "Modern dental clinic interior",
   },
   {
-    src: "https://images.unsplash.com/photo-1588776814546-1ffedbe47e7f?auto=format&fit=crop&w=800&q=80",
+    src: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80",
     alt: "Dental equipment",
   },
   {
@@ -121,7 +121,7 @@ export default function Home() {
       <div className="grid grid-cols-3" style={{ background: DARK, padding: "1.5rem 2rem" }}>
         {[
           { num: "100+", label: "Happy Patients" },
-          { num: "7", label: "Services Offered" },
+          { num: "6+", label: "Services Offered" },
           { num: "100%", label: "Patient Satisfaction" },
         ].map((s, i) => (
           <div key={s.label} className="text-center py-3 md:py-4" style={{ borderRight: i < 2 ? "0.5px solid rgba(255,255,255,0.1)" : "none" }}>
