@@ -299,7 +299,7 @@ export default function Home() {
         {/* Right: Info */}
         <div className="flex flex-col justify-center px-5 md:px-10 lg:px-16 py-14 md:py-20 gap-8 contact-info-panel">
           {[
-            { icon: "📞", label: "Phone", content: ["+91 72049 95169", "+91 63631 06061"], href: ["tel:+917204995169", "tel:+916363106061"] },
+            { icon: "📞", label: "Phone", content: ["+91 63631 06061"], href: ["tel:+916363106061"] },
             { icon: "✉", label: "Email", content: ["drsurajnaslapur@gmail.com"], href: ["mailto:drsurajnaslapur@gmail.com"] },
             { icon: "🕐", label: "Hours", content: ["Mon – Sat: 9 AM – 8 PM", "Sunday: By Appointment"], href: [] },
           ].map((item) => (
