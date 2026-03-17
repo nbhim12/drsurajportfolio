@@ -21,15 +21,15 @@ const SERVICES = [
 const GALLERY = [
   {
     src: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80",
-    alt: "Modern dental clinic interior",
+    alt: "Modern orthodontic clinic interior",
   },
   {
-    src: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80",
-    alt: "Dental equipment",
+    src: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80",
+    alt: "Orthodontist with patient during treatment",
   },
   {
-    src: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80",
-    alt: "Patient smiling after treatment",
+    src: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
+    alt: "Patient with confident smile after orthodontic treatment",
   },
 ];
 
@@ -301,6 +301,7 @@ export default function Home() {
           {[
             { icon: "📞", label: "Phone", content: ["+91 63631 06061"], href: ["tel:+916363106061"] },
             { icon: "✉", label: "Email", content: ["drsurajnaslapur@gmail.com"], href: ["mailto:drsurajnaslapur@gmail.com"] },
+            { icon: "📍", label: "Location", content: ["Bangalore, Karnataka"], href: [] },
             { icon: "🕐", label: "Hours", content: ["Mon – Sat: 9 AM – 8 PM", "Sunday: By Appointment"], href: [] },
           ].map((item) => (
             <div key={item.label}>
@@ -314,6 +315,74 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ── FAQ ── (hidden) */}
+      {false && (() => {
+        const faqs = [
+          {
+            q: "What are Damon Braces and how are they different from regular braces?",
+            a: "Damon braces are self-ligating brackets that use a sliding door mechanism instead of elastic ties. This reduces friction, allows faster tooth movement, requires fewer adjustment visits, and is generally more comfortable than conventional metal braces.",
+          },
+          {
+            q: "How long does orthodontic treatment take in Bangalore?",
+            a: "Treatment duration depends on the complexity of your case. Mild corrections may take 6–12 months, while moderate to complex cases typically take 18–24 months. Dr. Naslapur provides a personalised timeline after a thorough examination.",
+          },
+          {
+            q: "Is Invisalign as effective as braces?",
+            a: "Yes — Invisalign is highly effective for mild to moderate misalignments and certain complex cases. Clear aligners are virtually invisible, removable for eating and brushing, and deliver predictable results using 3D-planned digital treatment.",
+          },
+          {
+            q: "What is the difference between Invisalign and Spark Aligners?",
+            a: "Both are premium clear aligner systems. Spark Aligners use TruGEN XR crystal-clear plastic which is more stain-resistant and offers enhanced edge-to-edge contact compared to Invisalign. Dr. Naslapur will recommend the right system based on your specific needs.",
+          },
+          {
+            q: "At what age should a child have an orthodontic evaluation?",
+            a: "The Indian Orthodontic Society and the AAO recommend an evaluation by age 7, when the first permanent molars erupt. Early assessment allows Dr. Naslapur to identify growth and spacing issues and plan preventive treatment if needed.",
+          },
+          {
+            q: "What are Myofunctional Appliances used for?",
+            a: "Myofunctional appliances harness the natural forces of the facial muscles and growth to correct jaw relationships, improve breathing patterns, and reduce the need for extraction. They are most effective in growing children and teenagers.",
+          },
+        ];
+
+        const faqJsonLd = {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map(({ q, a }) => ({
+            "@type": "Question",
+            name: q,
+            acceptedAnswer: { "@type": "Answer", text: a },
+          })),
+        };
+
+        return (
+          <>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+            />
+            <section id="faq" className="px-5 md:px-10 lg:px-16 py-14 md:py-20" style={{ background: WARM_LIGHT }}>
+              <div className="max-w-6xl mx-auto">
+                <SectionLabel>Common Questions</SectionLabel>
+                <h2 className="mb-10" style={{ fontFamily: "var(--font-cormorant,'Cormorant Garamond',serif)", fontSize: "clamp(36px, 4vw, 52px)", fontWeight: 500, lineHeight: 1.15 }}>
+                  FAQ
+                </h2>
+                <div className="flex flex-col divide-y" style={{ borderTop: "0.5px solid rgba(0,0,0,0.1)", borderBottom: "0.5px solid rgba(0,0,0,0.1)" }}>
+                  {faqs.map(({ q, a }) => (
+                    <details key={q} className="group py-5 cursor-pointer list-none" style={{ borderColor: "rgba(0,0,0,0.1)" }}>
+                      <summary className="flex items-start justify-between gap-4 text-[16px] font-medium leading-snug select-none" style={{ color: DARK, listStyle: "none" }}>
+                        <span>{q}</span>
+                        <span className="mt-0.5 shrink-0 text-[20px] leading-none transition-transform duration-200 group-open:rotate-45" style={{ color: ACCENT }}>+</span>
+                      </summary>
+                      <p className="mt-3 text-[15px] leading-[1.75]" style={{ color: "#555" }}>{a}</p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </>
+        );
+      })()}
 
       {/* ── Footer ── */}
       <footer className="flex flex-col sm:flex-row justify-between items-center px-5 md:px-10 lg:px-16 py-8" style={{ background: "#111", borderTop: "0.5px solid rgba(255,255,255,0.05)" }}>
