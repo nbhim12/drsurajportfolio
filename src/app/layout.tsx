@@ -34,6 +34,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Dr. Suraj Naslapur" }],
   creator: "Dr. Suraj Naslapur",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   metadataBase: new URL("https://drsurajnaslapur.com"),
   openGraph: {
     title: "Dr. Suraj Naslapur | Consultant Orthodontist in Bangalore",
